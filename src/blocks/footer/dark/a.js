@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from  "prop-types";
+import PropTypes from "prop-types";
 
 function DarkFooterA(props) {
   return (
@@ -19,7 +19,7 @@ function DarkFooterA(props) {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg>
-            <span className="ml-3 text-xl">Tailblocks</span>
+            <span className="ml-3 text-xl">TailCalcitex</span>
           </a>
           <p className="mt-2 text-sm text-gray-500">
             Air plant banjo lyft occupy retro adaptogen indego
@@ -164,7 +164,7 @@ function DarkFooterA(props) {
                 <path
                   stroke="none"
                   d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                 />
+                />
                 <circle cx="4" cy="4" r="2" stroke="none" />
               </svg>
             </a>

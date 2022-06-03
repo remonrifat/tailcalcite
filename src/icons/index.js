@@ -80,6 +80,12 @@ import TestimonialC from './testimonial/c';
 
 export default function getIcons() {
   return {
+    Header: {
+      HeaderA: <HeaderA />,
+      HeaderB: <HeaderB />,
+      HeaderC: <HeaderC />,
+      HeaderD: <HeaderD />
+    },
     Blog: {
       BlogA: <BlogA />,
       BlogB: <BlogB />,
@@ -87,10 +93,10 @@ export default function getIcons() {
       BlogD: <BlogD />,
       BlogE: <BlogE />
     },
-    Contact: {
-      ContactA: <ContactA />,
-      ContactB: <ContactB />,
-      ContactC: <ContactC />
+    Gallery: {
+      GalleryA: <GalleryA />,
+      GalleryB: <GalleryB />,
+      GalleryC: <GalleryC />
     },
     Content: {
       ContentA: <ContentA />,
@@ -123,24 +129,11 @@ export default function getIcons() {
       FeatureG: <FeatureG />,
       FeatureH: <FeatureH />
     },
-    Footer: {
-      FooterA: <FooterA />,
-      FooterB: <FooterB />,
-      FooterC: <FooterC />,
-      FooterD: <FooterD />,
-      FooterE: <FooterE />
+    Contact: {
+      ContactA: <ContactA />,
+      ContactB: <ContactB />,
+      ContactC: <ContactC />
     },
-    Gallery: {
-      GalleryA: <GalleryA />,
-      GalleryB: <GalleryB />,
-      GalleryC: <GalleryC />
-    }, 
-    Header: {
-      HeaderA: <HeaderA />,
-      HeaderB: <HeaderB />,
-      HeaderC: <HeaderC />,
-      HeaderD: <HeaderD />
-    }, 
     Hero: {
       HeroA: <HeroA />,
       HeroB: <HeroB />,
@@ -152,12 +145,12 @@ export default function getIcons() {
     Pricing: {
       PricingA: <PricingA />,
       PricingB: <PricingB />
-    }, 
+    },
     Statistic: {
       StatisticA: <StatisticA />,
       StatisticB: <StatisticB />,
       StatisticC: <StatisticC />
-    }, 
+    },
     Step: {
       StepA: <StepA />,
       StepB: <StepB />,
@@ -172,6 +165,13 @@ export default function getIcons() {
       TestimonialA: <TestimonialA />,
       TestimonialB: <TestimonialB />,
       TestimonialC: <TestimonialC />
+    },
+    Footer: {
+      FooterA: <FooterA />,
+      FooterB: <FooterB />,
+      FooterC: <FooterC />,
+      FooterD: <FooterD />,
+      FooterE: <FooterE />
     }
   }
 }

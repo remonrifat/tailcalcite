@@ -157,8 +157,14 @@ import DarkTestimonialA from './testimonial/dark/a';
 import DarkTestimonialB from './testimonial/dark/b';
 import DarkTestimonialC from './testimonial/dark/c';
 
-export default function getBlock({theme = 'indigo', darkMode = false}) {
+export default function getBlock({ theme = 'indigo', darkMode = false }) {
   return {
+    Header: {
+      HeaderA: darkMode ? <DarkHeaderA theme={theme} /> : <LightHeaderA theme={theme} />,
+      HeaderB: darkMode ? <DarkHeaderB theme={theme} /> : <LightHeaderB theme={theme} />,
+      HeaderC: darkMode ? <DarkHeaderC theme={theme} /> : <LightHeaderC theme={theme} />,
+      HeaderD: darkMode ? <DarkHeaderD theme={theme} /> : <LightHeaderD theme={theme} />
+    },
     Blog: {
       BlogA: darkMode ? <DarkBlogA theme={theme} /> : <LightBlogA theme={theme} />,
       BlogB: darkMode ? <DarkBlogB theme={theme} /> : <LightBlogB theme={theme} />,
@@ -166,10 +172,10 @@ export default function getBlock({theme = 'indigo', darkMode = false}) {
       BlogD: darkMode ? <DarkBlogD theme={theme} /> : <LightBlogD theme={theme} />,
       BlogE: darkMode ? <DarkBlogE theme={theme} /> : <LightBlogE theme={theme} />
     },
-    Contact: {
-      ContactA: darkMode ? <DarkContactA theme={theme} /> : <LightContactA theme={theme} />,
-      ContactB: darkMode ? <DarkContactB theme={theme} /> : <LightContactB theme={theme} />,
-      ContactC: darkMode ? <DarkContactC theme={theme} /> : <LightContactC theme={theme} />,
+    Gallery: {
+      GalleryA: darkMode ? <DarkGalleryA theme={theme} /> : <LightGalleryA theme={theme} />,
+      GalleryB: darkMode ? <DarkGalleryB theme={theme} /> : <LightGalleryB theme={theme} />,
+      GalleryC: darkMode ? <DarkGalleryC theme={theme} /> : <LightGalleryC theme={theme} />
     },
     Content: {
       ContentA: darkMode ? <DarkContentA theme={theme} /> : <LightContentA theme={theme} />,
@@ -180,12 +186,6 @@ export default function getBlock({theme = 'indigo', darkMode = false}) {
       ContentF: darkMode ? <DarkContentF theme={theme} /> : <LightContentF theme={theme} />,
       ContentG: darkMode ? <DarkContentG theme={theme} /> : <LightContentG theme={theme} />,
       ContentH: darkMode ? <DarkContentH theme={theme} /> : <LightContentH theme={theme} />
-    },
-    CTA: {
-      CTAA: darkMode ? <DarkCTAA theme={theme} /> : <LightCTAA theme={theme} />,
-      CTAB: darkMode ? <DarkCTAB theme={theme} /> : <LightCTAB theme={theme} />,
-      CTAC: darkMode ? <DarkCTAC theme={theme} /> : <LightCTAC theme={theme} />,
-      CTAD: darkMode ? <DarkCTAD theme={theme} /> : <LightCTAD theme={theme} />
     },
     Ecommerce: {
       EcommerceA: darkMode ? <DarkEcommerceA theme={theme} /> : <LightEcommerceA theme={theme} />,
@@ -202,23 +202,17 @@ export default function getBlock({theme = 'indigo', darkMode = false}) {
       FeatureG: darkMode ? <DarkFeatureG theme={theme} /> : <LightFeatureG theme={theme} />,
       FeatureH: darkMode ? <DarkFeatureH theme={theme} /> : <LightFeatureH theme={theme} />
     },
-    Footer: {
-      FooterA: darkMode ? <DarkFooterA theme={theme} /> : <LightFooterA theme={theme} />,
-      FooterB: darkMode ? <DarkFooterB theme={theme} /> : <LightFooterB theme={theme} />,
-      FooterC: darkMode ? <DarkFooterC theme={theme} /> : <LightFooterC theme={theme} />,
-      FooterD: darkMode ? <DarkFooterD theme={theme} /> : <LightFooterD theme={theme} />,
-      FooterE: darkMode ? <DarkFooterE theme={theme} /> : <LightFooterE theme={theme} />
+    Contact: {
+      ContactA: darkMode ? <DarkContactA theme={theme} /> : <LightContactA theme={theme} />,
+      ContactB: darkMode ? <DarkContactB theme={theme} /> : <LightContactB theme={theme} />,
+      ContactC: darkMode ? <DarkContactC theme={theme} /> : <LightContactC theme={theme} />,
     },
-    Gallery: {
-      GalleryA: darkMode ? <DarkGalleryA theme={theme} /> : <LightGalleryA theme={theme} />,
-      GalleryB: darkMode ? <DarkGalleryB theme={theme} /> : <LightGalleryB theme={theme} />,
-      GalleryC: darkMode ? <DarkGalleryC theme={theme} /> : <LightGalleryC theme={theme} />
-    },
-    Header: {
-      HeaderA: darkMode ? <DarkHeaderA theme={theme} /> : <LightHeaderA theme={theme} />,
-      HeaderB: darkMode ? <DarkHeaderB theme={theme} /> : <LightHeaderB theme={theme} />,
-      HeaderC: darkMode ? <DarkHeaderC theme={theme} /> : <LightHeaderC theme={theme} />,
-      HeaderD: darkMode ? <DarkHeaderD theme={theme} /> : <LightHeaderD theme={theme} />
+
+    CTA: {
+      CTAA: darkMode ? <DarkCTAA theme={theme} /> : <LightCTAA theme={theme} />,
+      CTAB: darkMode ? <DarkCTAB theme={theme} /> : <LightCTAB theme={theme} />,
+      CTAC: darkMode ? <DarkCTAC theme={theme} /> : <LightCTAC theme={theme} />,
+      CTAD: darkMode ? <DarkCTAD theme={theme} /> : <LightCTAD theme={theme} />
     },
     Hero: {
       HeroA: darkMode ? <DarkHeroA theme={theme} /> : <LightHeroA theme={theme} />,
@@ -251,6 +245,13 @@ export default function getBlock({theme = 'indigo', darkMode = false}) {
       TestimonialA: darkMode ? <DarkTestimonialA theme={theme} /> : <LightTestimonialA theme={theme} />,
       TestimonialB: darkMode ? <DarkTestimonialB theme={theme} /> : <LightTestimonialB theme={theme} />,
       TestimonialC: darkMode ? <DarkTestimonialC theme={theme} /> : <LightTestimonialC theme={theme} />
+    },
+    Footer: {
+      FooterA: darkMode ? <DarkFooterA theme={theme} /> : <LightFooterA theme={theme} />,
+      FooterB: darkMode ? <DarkFooterB theme={theme} /> : <LightFooterB theme={theme} />,
+      FooterC: darkMode ? <DarkFooterC theme={theme} /> : <LightFooterC theme={theme} />,
+      FooterD: darkMode ? <DarkFooterD theme={theme} /> : <LightFooterD theme={theme} />,
+      FooterE: darkMode ? <DarkFooterE theme={theme} /> : <LightFooterE theme={theme} />
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from  "prop-types";
+import PropTypes from "prop-types";
 
 function LightFooterE(props) {
   return (
@@ -108,10 +108,10 @@ function LightFooterE(props) {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg>
-            <span className="ml-3 text-xl">Tailblocks</span>
+            <span className="ml-3 text-xl">TailCalcitex</span>
           </a>
           <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
-            © 2020 Tailblocks —
+            © 2020 TailCalcitex —
             <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">
               @knyttneve
             </a>
@@ -168,7 +168,7 @@ function LightFooterE(props) {
                 <path
                   stroke="none"
                   d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                 />
+                />
                 <circle cx="4" cy="4" r="2" stroke="none" />
               </svg>
             </a>

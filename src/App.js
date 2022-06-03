@@ -9,7 +9,7 @@ const iconList = getIcons();
 const blockListArr = [];
 
 Object.entries(iconList).forEach(([type, icons]) => {
- Object.keys(icons).map(name =>  blockListArr.push(`${name},${type}`));
+  Object.keys(icons).map(name => blockListArr.push(`${name},${type}`));
 });
 
 const themeList = ["indigo", "yellow", "red", "purple", "pink", "blue", "green"];
@@ -65,8 +65,8 @@ const clipboardIcon = (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M19.914 1h-18v19"/>
-    <path d="M6 5v18h18V5z"/>
+    <path d="M19.914 1h-18v19" />
+    <path d="M6 5v18h18V5z" />
   </svg>
 );
 
@@ -101,7 +101,7 @@ class App extends Component {
       blockName: 'BlogA',
       markup: ''
     }
-    
+
     this.changeMode = this.changeMode.bind(this);
     this.changeTheme = this.changeTheme.bind(this);
     this.changeBlock = this.changeBlock.bind(this);
@@ -146,7 +146,7 @@ class App extends Component {
         e.preventDefault();
         blockListArr.forEach((block, index) => {
           if (block === blockStringFormat) {
-            const newActiveBlock = index + 1 <= blockListArr.length - 1  ? blockListArr[index + 1].split(',') : blockListArr[0].split(',');
+            const newActiveBlock = index + 1 <= blockListArr.length - 1 ? blockListArr[index + 1].split(',') : blockListArr[0].split(',');
             const newBlockName = newActiveBlock[0];
             const newBlockType = newActiveBlock[1];
             const newBlockNode = document.querySelector(`.block-item[block-name="${newBlockName}"]`);
@@ -167,7 +167,7 @@ class App extends Component {
       case 39: // Right
         e.preventDefault();
         this.setState({ sidebar: true, currentKeyCode: 39 });
-        break;  
+        break;
       case 38: // Up
         e.preventDefault();
         blockListArr.forEach((block, index) => {
@@ -196,7 +196,7 @@ class App extends Component {
         this.setState({ currentKeyCode: null })
       }
     }, 200);
-   }
+  }
 
   changeMode() {
     this.setState({ darkMode: !this.state.darkMode })
@@ -221,18 +221,18 @@ class App extends Component {
       div.innerHTML = str.trim();
       return format(div, 0).innerHTML.trim();
     }
-    
+
     const format = (node, level) => {
       let indentBefore = new Array(level++ + 1).join('  '),
         indentAfter = new Array(level - 1).join('  '),
         textNode;
-    
+
       for (let i = 0; i < node.children.length; i++) {
         textNode = document.createTextNode('\n' + indentBefore);
         node.insertBefore(textNode, node.children[i]);
-    
+
         format(node.children[i], level);
-    
+
         if (node.lastElementChild === node.children[i]) {
           textNode = document.createTextNode('\n' + indentAfter);
           node.appendChild(textNode);
@@ -272,18 +272,18 @@ class App extends Component {
 
   themeListRenderer() {
     const { theme } = this.state;
-    return themeList.map((t, k) => 
+    return themeList.map((t, k) =>
       <button key={k} data-theme={t} onKeyDown={this.keyboardNavigation} className={`theme-button bg-${t}-500${theme === t ? ' is-active' : ''}`} onClick={this.changeTheme}></button>
     )
   }
 
   listRenderer() {
     const { blockName } = this.state;
-    return Object.entries(iconList).map(([type, icons]) => 
+    return Object.entries(iconList).map(([type, icons]) =>
       <div className="blocks" key={type}>
         <div className="block-category">{type}</div>
         <div className="block-list">
-        {Object.entries(icons).map(icon => <button key={icon[0]} tabIndex="0" onClick={this.changeBlock} className={`block-item${icon[0] === blockName ? ' is-active': ''}`} block-type={type} block-name={icon[0]}>{icon[1]}</button>)}
+          {Object.entries(icons).map(icon => <button key={icon[0]} tabIndex="0" onClick={this.changeBlock} className={`block-item${icon[0] === blockName ? ' is-active' : ''}`} block-type={type} block-name={icon[0]}>{icon[1]}</button>)}
         </div>
       </div>
     );
@@ -294,7 +294,7 @@ class App extends Component {
     return viewList.map((v, k) => <button key={k} className={`device${view === v.name ? ' is-active' : ''}`} data-view={v.name} onClick={this.changeView}>{v.icon}</button>);
   }
 
-  toggleSidebar() {
+  toggleSidebar() {
     this.setState({ sidebar: !this.state.sidebar });
   }
 
@@ -306,13 +306,13 @@ class App extends Component {
     input.select();
     document.execCommand('copy');
     document.body.removeChild(input);
-    this.setState({copied: true});
+    this.setState({ copied: true });
     setTimeout(() => {
       this.setState({
         copied: false
       })
     }, 2000);
-}
+  }
 
   render() {
     const { darkMode, theme, blockName, blockType, sidebar, view, copied, currentKeyCode } = this.state;
@@ -323,7 +323,7 @@ class App extends Component {
           {this.listRenderer()}
         </aside>
         <div className="toolbar">
-          <button className="opener" onClick={this.toggleSidebar} ref={this.openerRef}>TAILBLOCKS</button>
+          <button className="opener" onClick={this.toggleSidebar} ref={this.openerRef}>TAILCALCITEX</button>
           {this.state.codeView &&
             <div className="clipboard-wrapper">
               <button className="copy-the-block copy-to-clipboard" onClick={this.copyToClipboard}>
@@ -346,7 +346,7 @@ class App extends Component {
                 <path d="M16 18L22 12 16 6"></path>
                 <path d="M8 6L2 12 8 18"></path>
               </svg>
-              : 
+              :
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -360,7 +360,7 @@ class App extends Component {
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
             }
-            <span>{!this.state.codeView ? 'VIEW CODE': 'PREVIEW'}</span>
+            <span>{!this.state.codeView ? 'VIEW CODE' : 'PREVIEW'}</span>
           </button>
           <div className="switcher">
             {this.themeListRenderer()}
@@ -376,18 +376,19 @@ class App extends Component {
               contentDidUpdate={this.handleContentDidUpdate}
               head={
                 <>
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet" />
-                {
-                  <style dangerouslySetInnerHTML={{__html:
-                    `img { filter:
+                  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet" />
+                  {
+                    <style dangerouslySetInnerHTML={{
+                      __html:
+                        `img { filter:
                       ${darkMode ?
-                        'invert(1) opacity(.5); mix-blend-mode: luminosity; }'
-                        :
-                        'sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) }'
-                      }`
+                          'invert(1) opacity(.5); mix-blend-mode: luminosity; }'
+                          :
+                          'sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7) }'
+                        }`
                     }}
-                  />
-                }
+                    />
+                  }
                 </>
               }
             >
@@ -400,7 +401,7 @@ class App extends Component {
             </div>
           </div>
         </main>
-        <a href="https://github.com/mertJF/tailblocks" className="github" target="_blank" rel="noopener noreferrer">
+        <a href="" className="github" target="_blank" rel="noopener noreferrer">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path
               fill="currentColor"
@@ -412,23 +413,23 @@ class App extends Component {
         <div className="keyboard-nav">
           <div className={`k-up keyboard-button${currentKeyCode === 38 ? ' is-active' : ''}`} data-info="Previous block">
             <svg stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <path d="M12 19V5M5 12l7-7 7 7"/>
+              <path d="M12 19V5M5 12l7-7 7 7" />
             </svg>
           </div>
           <div className="keyboard-nav-row">
             <div className={`k-left keyboard-button${currentKeyCode === 37 ? ' is-active' : ''}`} data-info="Hide sidebar">
               <svg stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
+                <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
             </div>
             <div className={`k-down keyboard-button${currentKeyCode === 40 ? ' is-active' : ''}`} data-info="Next block">
               <svg stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
+                <path d="M12 5v14M19 12l-7 7-7-7" />
               </svg>
             </div>
             <div className={`k-right keyboard-button${currentKeyCode === 39 ? ' is-active' : ''}`} data-info="Show sidebar">
               <svg stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </div>
           </div>

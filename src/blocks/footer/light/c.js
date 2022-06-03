@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from  "prop-types";
+import PropTypes from "prop-types";
 
 function LightFooterC(props) {
   return (
@@ -199,7 +199,7 @@ function LightFooterC(props) {
                 <path
                   stroke="none"
                   d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                 />
+                />
                 <circle cx="4" cy="4" r="2" stroke="none" />
               </svg>
             </a>
@@ -209,7 +209,7 @@ function LightFooterC(props) {
       <div className="bg-gray-100">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-gray-500 text-sm text-center sm:text-left">
-            © 2020 Tailblocks —
+            © 2020 TailCalcitex —
             <a href="https://twitter.com/knyttneve" className="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">
               @knyttneve
             </a>
