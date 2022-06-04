@@ -323,7 +323,7 @@ class App extends Component {
           {this.listRenderer()}
         </aside>
         <div className="toolbar">
-          <button className="opener" onClick={this.toggleSidebar} ref={this.openerRef}>TAILCALCITEX</button>
+          <button className="opener" onClick={this.toggleSidebar} ref={this.openerRef}>TAILCALCITEXX</button>
           {this.state.codeView &&
             <div className="clipboard-wrapper">
               <button className="copy-the-block copy-to-clipboard" onClick={this.copyToClipboard}>
